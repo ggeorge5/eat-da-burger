@@ -1,12 +1,22 @@
 var mysql = require("mysql");
+require("dotenv").config();
 
-var connection = mysql.createConnection({
+let config = {
   host: "localhost",
   port: 3306,
   user: "root",
   password: "password",
   database: "burga_db"
-});
+}
+
+if (process.env.NODE_ENV === "prodcution"){
+  config = process.env.JAWSDB_URL;
+}
+var connection = mysql.createConnection(config);
+
+
+
+
 
 
 connection.connect(function(err) {
