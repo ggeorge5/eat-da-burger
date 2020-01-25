@@ -9,7 +9,7 @@ let config = {
   database: "burga_db"
 }
 
-if (process.env.NODE_ENV === "prodcution"){
+if (process.env.NODE_ENV === "production"){
   config = process.env.JAWSDB_URL;
 }
 var connection = mysql.createConnection(config);
